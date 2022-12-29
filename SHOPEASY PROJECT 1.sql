@@ -178,43 +178,6 @@ select * from Humanresources.Employee
 
 
 
-
-
-
-
-
-
-
---PRACTISING JOINS ON SHOPEASY DATABASE
-
-Select * from Items.ItemDetails id
-join items.ProductCategory ip
-on id.CategoryID = ip.CategoryID
-go
-
-Select id.Item_Name, id.Unit_Price, id.ItemID, ip.CategoryName, ip.CategoryID, 
-ss.Office_Address, ss.FirstName, td.QtyOrdered, he.EmployeeID
-from Items.ItemDetails id 
-join Items.ProductCategory ip
-on id.categoryID = ip.CategoryID
-join Supplier.SuppliersDetails ss
-on id.SupplierID = ss.Supplierid
-join Transactions.OrderDetails td
-on id.ItemID = td.ItemID
-join humanresources.Employee he
-on td.EmployeeID = he.EmployeeID
-
-go
-
-
-od.Shipmentmethod, he.employeeid
-from humanresources.employeeid he
-join Transactions.OrderDetails od
-on od.employeeid = he.employeeid
-join Humanresources.employee he
-on od.employeeid = he.employeeid
-go
-
 Select * from Items.ItemDetails
 select * from Transactions.OrderDetails
 select * from Supplier.SuppliersDetails
